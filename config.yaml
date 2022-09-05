@@ -1,6 +1,6 @@
 baseURL: http://jfpetersmam2023.netlify.app/
 languageCode: en-us
-title: Hey guys this is jf 
+title: Hey guys this is jf
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
@@ -10,7 +10,7 @@ params:
     subtitle: |-
       A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
       AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Hi, my name is Forty
+    title: Hi, my name is JF, lol 
   blog: {}
   contact:
     address:
