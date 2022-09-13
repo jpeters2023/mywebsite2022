@@ -6,10 +6,10 @@ googleAnalytics: ''
 disqusShortname: ''
 params:
   banner:
-    buttonText: My biography
+    buttonText: Get started
     subtitle: |-
-      CLICK ON THE BUTTON ON THE RIGHT TO READ MY BIOGRAPHY OR SCROLL DOWN TO
-      SEE CONTENT RELATED TO ME 
+      Welcome to my personal website I created for the Applied Statistics course given by Professor Kostis Christodoulou. 
+      Feel free to press on the button on the right to see the content I added. 
     title: Jean-Francois Peters 
   blog: {}
   contact:
@@ -82,28 +82,28 @@ params:
     enable: yes
     showcase:
       - image: pic01.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Aliquam
+        subtitle: A little explanation on how I ended up at LBS 
+        title: My Biography
         url: blogs/aliquam
       - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Tempus
+        subtitle: Click here to access my professional and acedemic experience
+        title: CV
         url: blogs/tempus
       - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
+        subtitle: My final project I did for my data science bootcamp at Le Wagon
+        title: Le Wagon
         url: blogs/magna
       - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
+        subtitle: An analysis inspired by an in-class excercice on Brexit voting data
+        title: Brexit Analysis
         url: blogs/ipsum
       - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
+        subtitle: A list of books I want to read 
+        title: Books
         url: blogs/ipsum
       - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Etiam
+        subtitle: Pictures of my life 
+        title: Pictures
         url: blogs/ipsum
   two:
     buttonText: Get Started
