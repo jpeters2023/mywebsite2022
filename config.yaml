@@ -7,10 +7,12 @@ disqusShortname: ''
 params:
   banner:
     buttonText: Get started
+    enable:: yes
     subtitle: |-
       Welcome to my personal website I created for the Applied Statistics course given by Professor Kostis Christodoulou. 
       Feel free to press on the button on the right to see the content I added. 
     title: Jean-Francois Peters 
+    url: blogs
   blog: {}
   contact:
     address:
@@ -96,7 +98,7 @@ params:
       - image: pic04.jpg
         subtitle: An analysis inspired by an in-class excercice on Brexit voting data
         title: Brexit Analysis
-        url: blogs/ipsum
+        url: blogs/ipsum²
       - image: pic05.jpg
         subtitle: A list of books I want to read 
         title: Books
@@ -106,7 +108,7 @@ params:
         title: Pictures
         url: blogs/ipsum
   two:
-    buttonText: Get Started
+    buttonText: Content menu
     enable: yes
     subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
       \r\n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \r\n    Pellentesque
