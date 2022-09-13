@@ -1,31 +1,31 @@
 baseURL: https://jpetersmam2023.netlify.app/
 languageCode: en-us
-title: Hey guys this is jf
+title: JF Peters
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
 params:
   banner:
-    buttonText: Get Started
+    buttonText: My biography
     subtitle: |-
-      A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
-      AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Hi, my name is JF, lol 
+      CLICK ON THE BUTTON ON THE RIGHT TO READ MY BIOGRAPHY OR SCROLL DOWN TO
+      SEE CONTENT RELATED TO ME 
+    title: Jean-Francois Peters 
   blog: {}
   contact:
     address:
-      - city: City, ST 00000
-        country: Country
-        street: Street
-        title: Address
+      - city: London,W9
+        country: United Kingdom
+        street: Maida Vale 03 
+        title: Adress
     buttonClear: Clear
     buttonSend: Send message
     email:
-      - email: example@domain.com
-        title: Email
+      - email: jpeters.mam2023@london.edu 
+        title: Emails
     enable: yes
     phone:
-      - phone: (000) 000-0000 x1234
+      - phone: (+32) 478-116-587 
         title: Phone
   custom_css: []
   custom_js: []
@@ -35,49 +35,49 @@ params:
     text: Please visit [this page](/)
   favicon: favicon.ico
   footer:
-    copyright: Company Name
+    copyright: JF Peters
     enable: yes
     quicklinks:
       - alt: HTML5 UP
         text: 'Design: '
         url: https://www.html5up.net
     social:
-      - icon: fa-twitter
-        label: Twitter
-        url: https://www.twitter.com
+      # - icon: fa-twitter
+      #   label: Twitter
+      #   url: https://www.twitter.com
       - icon: fa-facebook
         label: Facebook
-        url: https://www.facebook.com
+        url: https://www.facebook.com/jeanfrancois.peters.9/
       - icon: fa-instagram
         label: Instagram
-        url: https://www.instagram.com
+        url: https://www.instagram.com/jf.peters._/
       - icon: fa-github
         label: GitHub
-        url: https://www.github.com
+        url: https://github.com/jpeters2023
       - icon: fa-linkedin
         label: LinkedIn
-        url: https://www.linkedin.com
+        url: https://www.linkedin.com/in/jean-francois-p%C3%A9ters-175016153
   image: ''
   name: Your name
   navigation:
     button1:
-      - name: Get Started
-        url: blogs
+      - name: My Biography
+        url: blogs/ipsum
     button2:
-      - name: Log In
+      - name: Pictures
         url: '#'
     links:
-      - name: Home
+      - name: CV 
         url: '#'
-      - name: Blogs
+      - name: Books to read
         url: blogs
-      - name: Generic Blog
+      - name: Brexit Analysis
         url: blogs/ipsum
-      - name: Elements
+      - name: Le Wagon final project
         url: elements.html
-    menu: Menu
-    subtitle: By HTML5 Up
-    title: Forty
+    menu: Quick Navigation
+    subtitle: Peters
+    title: Jean Francois
   tiles:
     enable: yes
     showcase:
