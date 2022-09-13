@@ -9,8 +9,7 @@ params:
     buttonText: Get started
     enable:: yes
     subtitle: |-
-      Welcome to my personal website I created for the Applied Statistics course given by Professor Kostis Christodoulou. 
-      Feel free to press on the button on the right to see the content I added. 
+      Welcome to my website which gives a bit of context on my interests and my projects
     title: Jean-Francois Peters 
     url: blogs
   blog: {}
@@ -92,13 +91,13 @@ params:
         title: CV
         url: blogs/tempus
       - image: pic03.jpg
-        subtitle: My final project I did for my data science bootcamp at Le Wagon
-        title: Le Wagon
+        subtitle: An analysis inspired by an homework done on Brexit data
+        title: Brexit Analysis
         url: blogs/magna
       - image: pic04.jpg
-        subtitle: An analysis inspired by an in-class excercice on Brexit voting data
-        title: Brexit Analysis
-        url: blogs/ipsum²
+        subtitle: My final project I did for my data science bootcamp at Le Wagon
+        title: Le Wagon
+        url: blogs/ipsum
       - image: pic05.jpg
         subtitle: A list of books I want to read 
         title: Books
