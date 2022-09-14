@@ -97,19 +97,20 @@ params:
       - image: pic04.jpg
         subtitle: My final project I did for my data science bootcamp at Le Wagon
         title: Le Wagon
-        url: blogs/ipsum
-      - image: pic05.jpg
+        url: blogs/lewagon
+      - image: books.jpg
         subtitle: A list of books I want to read 
         title: Books
-        url: blogs/ipsum
+        url: blogs/books
       - image: pictures.jpg
-        subtitle: Pictures of my life 
+        subtitle: "10 Pictures of my life"
         title: Pictures
         url: blogs/pictures
   two:
     buttonText: Content menu
     enable: yes
     subtitle: "This website is an assignment that was done for the Applied Statistics course, given by Kostis Christodoulou, during my Masters in Analytics
-    at the London Business School."
+    at the London Business School.\n\nPress on the button below to access the contents made available on my webpage in the form of a list"
+  
     title: A little bit of explanation 
     url: blogs

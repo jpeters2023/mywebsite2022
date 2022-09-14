@@ -11,26 +11,81 @@ slug: pictures # slug is the shorthand URL address... no spaces plz
 title: Pictures
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+### 1. Me and one of my best friends at a Festival in Brussels: 
+```{r picture 1,echo = FALSE}
+knitr::include_graphics("/img/pic1.jpg",error=FALSE)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you clickthe **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+### 2. A backflip I did in the lake of Bled in Slovenia: 
+```{r picture 2,echo = FALSE}
+knitr::include_graphics("/img/pic2.jpg",error=FALSE)
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+### 3. A picture of me and my beloved girlfriend: 
+```{r picture 3,echo = FALSE}
+knitr::include_graphics("/img/pic3.jpg",error=FALSE)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+### 4. A picture I took when I was visiting the Algarve region in Portugal: 
+```{r picture 4,echo = FALSE}
+knitr::include_graphics("/img/pic4.jpg",error=FALSE)
+```
+
+
+### 5. A picture I took during my scoutscamp as a leader in Slovenia: 
+```{r picture 5,echo = FALSE}
+knitr::include_graphics("/img/pic5.jpg",error=FALSE)
+```
+
+
+### 6. My youngest boy scouts and me posing in front of the mountains: 
+```{r picture 6,echo = FALSE}
+knitr::include_graphics("/img/pic6.jpg",error=FALSE)
+```
+
+
+### 7. A nice sunset in Slovenia:
+```{r picture 7,echo = FALSE}
+knitr::include_graphics("/img/pic7.jpg",error=FALSE)
+```
+
+
+
+### 8. Another nice picture of the mountains
+```{r picture 8,echo = FALSE}
+knitr::include_graphics("/img/pic8.jpg",error=FALSE)
+```
+
+
+### 9. My friends posing instagram style  : 
+```{r picture 9,echo = FALSE}
+knitr::include_graphics("/img/pic9.jpg",error=FALSE)
+```
+
+
+### 10. Me and my sister (she was not verry happy with me): 
+```{r picture 10,echo = FALSE}
+knitr::include_graphics("/img/pic10.jpg",error=FALSE)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
