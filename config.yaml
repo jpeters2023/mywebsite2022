@@ -66,7 +66,7 @@ params:
         url: blogs/biography
     button2:
       - name: Pictures
-        url: '#'
+        url: blogs/pictures
     links:
       - name: CV 
         url: '#'
@@ -82,7 +82,7 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
+      - image: me.jpg
         subtitle: A little explanation on how I ended up at LBS 
         title: My Biography
         url: blogs/biography
@@ -102,10 +102,10 @@ params:
         subtitle: A list of books I want to read 
         title: Books
         url: blogs/ipsum
-      - image: pic06.jpg
+      - image: pictures.jpg
         subtitle: Pictures of my life 
         title: Pictures
-        url: blogs/ipsum
+        url: blogs/pictures
   two:
     buttonText: Content menu
     enable: yes
