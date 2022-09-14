@@ -63,7 +63,7 @@ params:
   navigation:
     button1:
       - name: My Biography
-        url: blogs/ipsum
+        url: blogs/biography
     button2:
       - name: Pictures
         url: '#'
@@ -73,7 +73,7 @@ params:
       - name: Books to read
         url: blogs
       - name: Brexit Analysis
-        url: blogs/ipsum
+        url: blogs/brexit
       - name: Le Wagon final project
         url: elements.html
     menu: Quick Navigation
@@ -85,7 +85,7 @@ params:
       - image: pic01.jpg
         subtitle: A little explanation on how I ended up at LBS 
         title: My Biography
-        url: blogs/aliquam
+        url: blogs/biography
       - image: pic02.jpg
         subtitle: Click here to access my professional and acedemic experience
         title: CV
@@ -93,7 +93,7 @@ params:
       - image: pic03.jpg
         subtitle: An analysis inspired by an homework done on Brexit data
         title: Brexit Analysis
-        url: blogs/magna
+        url: blogs/brexit
       - image: pic04.jpg
         subtitle: My final project I did for my data science bootcamp at Le Wagon
         title: Le Wagon
@@ -109,7 +109,7 @@ params:
   two:
     buttonText: Content menu
     enable: yes
-    subtitle: "This website is an assignment that was done for the applied statistics course during my Masters in Analytics
+    subtitle: "This website is an assignment that was done for the Applied Statistics course, given by Kostis Christodoulou, during my Masters in Analytics
     at the London Business School."
     title: A little bit of explanation 
     url: blogs
