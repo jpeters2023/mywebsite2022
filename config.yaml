@@ -9,7 +9,8 @@ params:
     buttonText: Get started
     enable:: yes
     subtitle: |-
-      Welcome to my website which gives a bit of context on my interests and my projects
+      Welcome to the website which gives a bit of context on myself and my project. Press on the tiles below to learn more about myself 
+      or scroll down below to get access to my projects
     title: Jean-Francois Peters 
     url: blogs
   blog: {}
@@ -63,19 +64,19 @@ params:
   navigation:
     button1:
       - name: My Biography
-        url: blogs/biography
+        url: biography
     button2:
-      - name: Pictures
-        url: blogs/pictures
+      - name: Projects
+        url: blogs
     links:
       - name: CV 
-        url: '#'
+        url: documents/CV.pdf
       - name: Books to read
-        url: blogs
-      - name: Brexit Analysis
-        url: blogs/brexit
-      - name: Le Wagon final project
-        url: elements.html
+        url: books
+      - name: Pictures 
+        url: pictures
+      # - name: Le Wagon final project
+      #   url: elements.html
     menu: Quick Navigation
     subtitle: Peters
     title: Jean Francois
@@ -85,32 +86,32 @@ params:
       - image: me.jpg
         subtitle: A little explanation on how I ended up at LBS 
         title: My Biography
-        url: blogs/biography
+        url: biography
       - image: pic02.jpg
         subtitle: Click here to access my professional and acedemic experience
         title: CV
-        url: blogs/tempus
-      - image: pic03.jpg
-        subtitle: An analysis inspired by an homework done on Brexit data
-        title: Brexit Analysis
-        url: blogs/brexit
-      - image: pic04.jpg
-        subtitle: My final project I did for my data science bootcamp at Le Wagon
-        title: Le Wagon
-        url: blogs/lewagon
+        url: documents/CV.pdf
+      # - image: pic03.jpg
+      #   subtitle: An analysis inspired by an homework done on Brexit data
+      #   title: Brexit Analysis
+      #   url: blogs/brexit
+      # - image: pic04.jpg
+      #   subtitle: My final project I did for my data science bootcamp at Le Wagon
+      #   title: Le Wagon
+      #   url: blogs/lewagon
       - image: books.jpg
         subtitle: A list of books I want to read 
         title: Books
-        url: blogs/books
+        url: books
       - image: pictures.jpg
         subtitle: "10 Pictures of my life"
         title: Pictures
-        url: blogs/pictures
+        url: pictures
   two:
-    buttonText: Content menu
+    buttonText: My Projects
     enable: yes
-    subtitle: "This website is an assignment that was done for the Applied Statistics course, given by Kostis Christodoulou, during my Masters in Analytics
-    at the London Business School.\n\nPress on the button below to access the contents made available on my webpage in the form of a list"
+    subtitle: "Press on the button on the right to be redirected to my projects menu. This project's menu included projects I did 
+    for le wagon, R-analysis on brexit data and more."
   
-    title: A little bit of explanation 
+    title: My Projects
     url: blogs

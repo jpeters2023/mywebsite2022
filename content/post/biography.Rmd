@@ -1,0 +1,40 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2022-09-14"
+description: Biography of my life  # the title that will show up once someone gets to this page
+draft: false
+image: bio.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: biography # slug is the shorthand URL address... no spaces plz
+title: My biography 
+---
+
+### 1. Before the dawn of time
+I was born on 21/10/2000 in Brussels. I was raised in Brussels by a Belgian dad and a French mother. My hobbies were **swimming** and **reading**. Although my family speaks french, I've always been to dutch schools. Therefore I spoke two different languages at a very young age. 
+
+### 2. Undergrad 
+I did my undergrad at **KU Leuven** in Belgium. I studied Business Engineering in *Dutch*. My three favorite courses in order of preference were:
+
+1. Python: software programming 
+2. Corporate Finance 
+3. Mathematics
+
+During the last semester of my Bachelor I had the opportunity to follow a semester abroad for my Erasmus. This led me to live in Rome for the duration of 6 months. There, I made a lot of friends, partied and to my mother's regret, didn't study once *:'(*. 
+
+### 3. Le Wagon and intership at AB-InBev 
+
+After finishing my undergrad I decided to take a gap year to focus on what I wanted to afterwards. Therefore, I followed an intensive data science bootcamp at le Wagon in Paris. During this boot camp I learned a lot about **Data Analytics**, **Machine Learnin**, **Deep Learning** and **Data Engineering**. 
+
+To continue on a data-oriented path, I decided to an internship in Data Science at AB-InBev. I was fortunate to be surrounded by an amazing team and I learned a lot of things. At the end of my internship, I wrote a causal model about the relationship between Secondary Displays and Beer Sale in points of consumption in Germany. 
+
+
+### 4. LBS 
+
+This leads me to the final part of my first 21 (almost 22) years. After realising that I really liked working with data, I decided to follow the masters in Management and Analytics at LBS. 
+
+
+  
+  
