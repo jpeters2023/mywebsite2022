@@ -1,0 +1,129 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2022-09-14"
+description: Biography of my life  # the title that will show up once someone gets to this page
+draft: false
+image: bio.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: resume # slug is the shorthand URL address... no spaces plz
+title: my resume
+---
+
+
+Emma Clark
+
+LinkedIn: <https://www.linkedin.com/in/emma-clark-6779221a0>
+
+6465 Jasmine Drive, Huntington Beach CA 92648 · +1 (714) 801-5552·
+emmachristine015\@gmail.com
+
+**EDUCATION**
+
+**London Business School** London, UK
+
+*Masters in Analytics and Management* June 2023
+
+**University of Notre Dame** Notre Dame, IN
+
+*Bachelor of Business Administration- Major in Accountancy, Minor in
+Sociology* May 2022
+
+**GPA**: 3.65
+
+**HONORS AND ACHIEVEMENTS**
+
+-   All Atlantic Coast Conference Academic Team, Honor Roll, Second Team
+    (2019, 2021), and Freshman Team (2019)
+
+-   Easton/NFCA All-America Scholar Athlete (2019)
+
+**EXPERIENCE**
+
+**Deloitte & Touche LLP** Chicago, IL
+
+*Internship* June-August 2022
+
+-   8-week internship as an Audit and Assurance Staff-Intern
+
+-   Will work on several client teams to audit client financials,
+    transactions, and internal control processes.
+
+-   Will work with team members to apply concepts of risk assessment and
+    how to design and perform audit procedures responsive to those
+    risks.
+
+-   Utilize cutting-edge audit tools and technologies that use
+    artificial intelligence, advanced analytics, data visualizations and
+    process flow automation to perform an interrogation and analysis of
+    client data.
+
+**Protiviti** Los Angeles, CA
+
+*Internship* June-August 2021
+
+-   8-week internship within the Internal Audit and Financial Advisory-
+    Process Solution
+
+-   Worked with several different client teams in across different
+    industries, sitting in and participating on client calls.
+
+-   Tested Sarbanes Oxley compliance, tested internal controls as well
+    as assisted in developing internal controls for new client
+    acquisitions
+
+**Stryker** Kalamazoo, MI
+
+*Externship* October-November 2019
+
+-   Worked in a small group for seven weeks to develop a marketing
+    campaign plan for the new TSO3 acquisition
+
+-   Researched into the background of the medical equipment sanitization
+    field and the current setting in order to best reach and acquire new
+    clients
+
+**University of Notre Dame** Notre Dame, IN
+
+*Student Athlete Tutor* May-July 2019
+
+-   Tutored Elements of Calculus and Statistical Inference
+
+-   Developed skills in assisting and connecting with students to deepen
+    their understanding of the material.
+
+*Student-Athlete* August 2018-Present
+
+-   Dedicated 20+ hours a week to travel, practice, training, and
+    playing, while maintaining a full course load
+
+-   Maintained a starting position over the past four years and
+    consistently contribute to the success of the team by focusing on
+    goal and process-oriented achievement.
+
+-   Exhibited teamwork and strong work ethic by promoting camaraderie as
+    well as promoting new ideas to the team and coaches to take the team
+    to new heights
+
+-   Mentored younger teammates and recruits on how to balance the
+    demanding needs of a student-athlete
+
+**LEADERSHIP**
+
+**University of Notre Dame** Notre Dame, IN
+
+*Rosenthal Leadership Academy* August-October 2021, August-October 2019
+
+-   Nominated twice by coaches and peers to attend a two-day retreat and
+    multiple workshops as a future leader and then current team leader.
+
+-   Enhanced and developed personal as well as leadership skills through
+    activities that involved growth mindset, self-awareness, problem
+    solving, conflict resolution, and communication skills
+
+**[SKILLS]{.ul}**
+
+R, Tableau, Microsoft Office, Excel, PowerPoint, and Microsoft Access,
+Adobe Acrobat

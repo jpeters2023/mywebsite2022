@@ -3,38 +3,120 @@ categories:
 - ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
 - ""
 date: "2022-09-14"
-description: Brexit data analysis inspired on homework done for the course # the title that will show up once someone gets to this page
+description: A graph depicting the best and worst countries regarding renewable energy production # the title that will show up once someone gets to this page
 draft: false
-image: brexit.jpg #save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+image: / #save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
 keywords: ""
 slug: brexit # slug is the shorthand URL address... no spaces plz
-title: Brexit voting Data Analysis
+title: "Share of renewable energy production: tops and flops"
 ---
 
 
 
-<div id="introduction-to-the-data" class="section level2">
-<h2>Introduction to the data</h2>
-<p>Let’s analyse at first what the data is all about:</p>
-<pre class="r"><code>glimpse(brexit_results)</code></pre>
-<pre><code>## Rows: 632
-## Columns: 11
-## $ Seat        &lt;chr&gt; &quot;Aldershot&quot;, &quot;Aldridge-Brownhills&quot;, &quot;Altrincham and Sale W…
-## $ con_2015    &lt;dbl&gt; 50.592, 52.050, 52.994, 43.979, 60.788, 22.418, 52.454, 22…
-## $ lab_2015    &lt;dbl&gt; 18.333, 22.369, 26.686, 34.781, 11.197, 41.022, 18.441, 49…
-## $ ld_2015     &lt;dbl&gt; 8.824, 3.367, 8.383, 2.975, 7.192, 14.828, 5.984, 2.423, 1…
-## $ ukip_2015   &lt;dbl&gt; 17.867, 19.624, 8.011, 15.887, 14.438, 21.409, 18.821, 21.…
-## $ leave_share &lt;dbl&gt; 57.89777, 67.79635, 38.58780, 65.29912, 49.70111, 70.47289…
-## $ born_in_uk  &lt;dbl&gt; 83.10464, 96.12207, 90.48566, 97.30437, 93.33793, 96.96214…
-## $ male        &lt;dbl&gt; 49.89896, 48.92951, 48.90621, 49.21657, 48.00189, 49.17185…
-## $ unemployed  &lt;dbl&gt; 3.637000, 4.553607, 3.039963, 4.261173, 2.468100, 4.742731…
-## $ degree      &lt;dbl&gt; 13.870661, 9.974114, 28.600135, 9.336294, 18.775591, 6.085…
-## $ age_18to24  &lt;dbl&gt; 9.406093, 7.325850, 6.437453, 7.747801, 5.734730, 8.209863…</code></pre>
-</div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p><img src="/blogs/brexit_files/figure-html/pressure-1.png" width="672" /></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
-<p>test</p>
-</div>
+<p>The National Bureau of Economic Research (NBER) has a a very interesting
+dataset on the adoption of about 200 technologies in more than 150
+countries since 1800. This is the<a href="https://www.nber.org/research/data/cross-country-historical-adoption-technology">Cross-country Historical Adoption of
+Technology (CHAT) dataset</a>.</p>
+<p>The following is a description of the variables</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>variable</strong></th>
+<th><strong>class</strong></th>
+<th><strong>description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>variable</td>
+<td>character</td>
+<td>Variable name</td>
+</tr>
+<tr class="even">
+<td>label</td>
+<td>character</td>
+<td>Label for variable</td>
+</tr>
+<tr class="odd">
+<td>iso3c</td>
+<td>character</td>
+<td>Country code</td>
+</tr>
+<tr class="even">
+<td>year</td>
+<td>double</td>
+<td>Year</td>
+</tr>
+<tr class="odd">
+<td>group</td>
+<td>character</td>
+<td>Group (consumption/production)</td>
+</tr>
+<tr class="even">
+<td>category</td>
+<td>character</td>
+<td>Category</td>
+</tr>
+<tr class="odd">
+<td>value</td>
+<td>double</td>
+<td>Value (related to label)</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>technology &lt;- readr::read_csv(here::here(&#39;data/technology.csv&#39;))</code></pre>
+<pre><code>## Rows: 491636 Columns: 7
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (5): variable, label, iso3c, group, category
+## dbl (2): year, value
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>#get all technologies
+labels &lt;- technology %&gt;% 
+  distinct(variable, label)
+
+# Get country names using &#39;countrycode&#39; package
+technology &lt;- technology %&gt;% 
+  filter(iso3c != &quot;XCD&quot;) %&gt;% 
+  mutate(iso3c = recode(iso3c, &quot;ROM&quot; = &quot;ROU&quot;),
+         country = countrycode(iso3c, origin = &quot;iso3c&quot;, destination = &quot;country.name&quot;),
+         country = case_when(
+           iso3c == &quot;ANT&quot; ~ &quot;Netherlands Antilles&quot;,
+           iso3c == &quot;CSK&quot; ~ &quot;Czechoslovakia&quot;,
+           iso3c == &quot;XKX&quot; ~ &quot;Kosovo&quot;,
+           TRUE           ~ country))</code></pre>
+<pre><code>## Warning in countrycode_convert(sourcevar = sourcevar, origin = origin, destination = dest, : Some values were not matched unambiguously: ANT, CSK, XKX</code></pre>
+<pre class="r"><code>#make smaller dataframe on energy
+energy &lt;- technology %&gt;% 
+  filter(category == &quot;Energy&quot;)
+
+# download CO2 per capita from World Bank using {wbstats} package
+# https://data.worldbank.org/indicator/EN.ATM.CO2E.PC
+# co2_percap &lt;- wb_data(country = &quot;countries_only&quot;, 
+#                       indicator = &quot;EN.ATM.CO2E.PC&quot;, 
+#                       start_date = 1970, 
+#                       end_date = 2022,
+#                       return_wide=FALSE) %&gt;% 
+#   filter(!is.na(value)) %&gt;% 
+#   #drop unwanted variables
+#   select(-c(unit, obs_status, footnote, last_updated))
+
+co2_percap &lt;- read_csv(here::here(&quot;data/co2percap.csv&quot;),skip = 4) %&gt;% 
+  janitor::clean_names()</code></pre>
+<pre><code>## New names:
+## Rows: 266 Columns: 67
+## ── Column specification
+## ──────────────────────────────────────────────────────── Delimiter: &quot;,&quot; chr
+## (4): Country Name, Country Code, Indicator Name, Indicator Code dbl (30): 1990,
+## 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, ... lgl (33): 1960,
+## 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, ...
+## ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+## Specify the column types or set `show_col_types = FALSE` to quiet this message.
+## • `` -&gt; `...67`</code></pre>
+<p>This is a very rich data set, not just for energy and CO2 data, but for many other technologies. In our case, we just need to produce a couple of graphs– at this stage, the emphasis is on data manipulation, rather than making the graphs gorgeous.</p>
+<p>First, produce a graph with the countries with the highest and lowest % contribution of renewables in energy production. This is made up of <code>elec_hydro</code>, <code>elec_solar</code>, <code>elec_wind</code>, and <code>elec_renew_other</code>. You may want to use the <em>patchwork</em> package to assemble the two charts next to each other.</p>
+<pre><code>## `summarise()` has grouped output by &#39;country&#39;. You can override using the
+## `.groups` argument.</code></pre>
+<p><img src="/blogs/brexit_files/figure-html/min-max_renewables-1.png" width="100%" /></p>

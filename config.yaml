@@ -70,7 +70,7 @@ params:
         url: blogs
     links:
       - name: CV 
-        url: documents/CV.pdf
+        url: documents/resume
       - name: Books to read
         url: books
       - name: Pictures 
@@ -90,7 +90,7 @@ params:
       - image: pic02.jpg
         subtitle: Click here to access my professional and acedemic experience
         title: CV
-        url: documents/CV.pdf
+        url: documents/resume.pdf
       # - image: pic03.jpg
       #   subtitle: An analysis inspired by an homework done on Brexit data
       #   title: Brexit Analysis
@@ -100,7 +100,7 @@ params:
       #   title: Le Wagon
       #   url: blogs/lewagon
       - image: books.jpg
-        subtitle: A list of books I want to read 
+        subtitle: A list of books I want to read
         title: Books
         url: books
       - image: pictures.jpg

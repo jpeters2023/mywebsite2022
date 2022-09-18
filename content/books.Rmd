@@ -3,35 +3,33 @@ categories:
 - ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
 - ""
 date: "2022-09-14"
-description: Books I read or I want to read  # the title that will show up once someone gets to this page
+description: Biography of my life  # the title that will show up once someone gets to this page
 draft: false
-image: bio.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+image: books.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
 
 keywords: ""
-slug: books # slug is the shorthand URL address... no spaces plz
-title: Books
+slug: Books # slug is the shorthand URL address... no spaces plz
+title: Books 
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+### Here's a list of 10 books I want to read: 
 
-## R Markdown
+1. **In search of lost time** by *Marcel Proust* 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+2. **Ulysses** by *James Joyce*  
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+3. **Don Quixote** by *Miguel de Cervantes* 
 
-```{r cars}
-summary(cars)
-```
+5. **The Great Gatsby** by *F. Scott Fitzgerald* 
 
-## Including Plots
+6. **Moby Dick** by *Herman Melville*
 
-You can also embed plots, for example:
+7. **War and peace** by *Leo Tolstoy*
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+8. **The bible** by *the apostles* 
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+9. **The Odyssey** by *Homer* 
+
+10. **Tfala** by *S. Mabiet* 
+  
+  
