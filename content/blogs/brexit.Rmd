@@ -5,7 +5,7 @@ categories:
 date: "2022-09-14"
 description: A graph depicting the best and worst countries regarding renewable energy production # the title that will show up once someone gets to this page
 draft: false
-image: / #save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+image: energy.png #save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
 keywords: ""
 slug: brexit # slug is the shorthand URL address... no spaces plz
 title: "Share of renewable energy production: tops and flops"
