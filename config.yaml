@@ -9,8 +9,8 @@ params:
     buttonText: Get started
     enable:: yes
     subtitle: |-
-      Welcome to the website which gives a bit of context on myself and my project. Press on the tiles below to learn more about myself 
-      or scroll down below to get access to my projects
+      Welcome to the website that gives a bit of context on myself and projects I did for the 
+      Applied Statistics Course. 
     title: Jean-Francois Peters 
     url: blogs
   blog: {}
@@ -70,7 +70,7 @@ params:
         url: blogs
     links:
       - name: CV 
-        url: documents/resume
+        url: documents/CV.pdf
       - name: Books to read
         url: Books
       - name: Pictures 

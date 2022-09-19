@@ -1,0 +1,56 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2022-09-14"
+description: GDP components over time and among countries  # the title that will show up once someone gets to this page
+draft: false
+image: GDP.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: GDP # slug is the shorthand URL address... no spaces plz
+title: GDP components over time and among countries
+---
+
+
+
+<p>At the risk of oversimplifying things, the main components of gross domestic product, GDP are personal consumption (C), business investment (I), government spending (G) and net exports (exports - imports). You can read more about GDP and the different approaches in calculating at the <a href="https://en.wikipedia.org/wiki/Gross_domestic_product">Wikipedia GDP page</a>.</p>
+<p>The GDP data we will look at is from the <a href="https://unstats.un.org/unsd/snaama/Downloads">United Nations’ National Accounts Main Aggregates Database</a>, which contains estimates of total GDP and its components for all countries from 1970 to today. We will look at how GDP and its components have changed over time, and compare different countries and how much each component contributes to that country’s GDP. The file we will work with is <a href="http://unstats.un.org/unsd/amaapi/api/file/6">GDP and its breakdown at constant 2010 prices in US Dollars</a> and it has already been saved in the Data directory. Have a look at the Excel file to see how it is structured and organised</p>
+<pre class="r"><code>UN_GDP_data  &lt;-  read_excel(here::here(&quot;data&quot;, &quot;Download-GDPconstant-USD-countries.xls&quot;), # Excel filename
+                sheet=&quot;Download-GDPconstant-USD-countr&quot;, # Sheet name
+                skip=2) # Number of rows to skip</code></pre>
+<p>The first thing you need to do is to tidy the data, as it is in wide format and you must make it into long, tidy format. Please express all figures in billions (divide values by <code>1e9</code>, or <span class="math inline">\(10^9\)</span>), and you want to rename the indicators into something shorter.</p>
+<blockquote>
+<p>make sure you remove <code>eval=FALSE</code> from the next chunk of R code– I have it there so I could knit the document</p>
+</blockquote>
+<pre class="r"><code>tidy_GDP_data  &lt;-  UN_GDP_data %&gt;% 
+  pivot_longer(4:51,names_to = &quot;year&quot;,values_to =&quot;value&quot;) %&gt;% 
+  mutate(value = value/1e9) %&gt;% 
+  mutate(IndicatorName = dplyr::recode(
+    IndicatorName,
+    &#39;Exports of goods and services&#39; = &#39;Exports&#39;,
+    &#39;General government final consumption expenditure&#39; = &#39;Government_Expenditure&#39;,
+    &#39;Imports of goods and services&#39; = &#39;Imports&#39;, 
+    &#39;Household consumption expenditure (including Non-profit institutions serving households)&#39; = &#39;Household_expenditure&#39;,
+    &#39;Gross capital formation&#39; = &#39;Gross_capital_formation&#39;,
+    &#39;Gross Domestic Product (GDP)&#39; = &quot;real_GDP&quot;))
+  
+
+glimpse(tidy_GDP_data)</code></pre>
+<pre><code>## Rows: 176,880
+## Columns: 5
+## $ CountryID     &lt;dbl&gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,…
+## $ Country       &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanista…
+## $ IndicatorName &lt;chr&gt; &quot;Final consumption expenditure&quot;, &quot;Final consumption expe…
+## $ year          &lt;chr&gt; &quot;1970&quot;, &quot;1971&quot;, &quot;1972&quot;, &quot;1973&quot;, &quot;1974&quot;, &quot;1975&quot;, &quot;1976&quot;, …
+## $ value         &lt;dbl&gt; 5.559069, 5.332823, 5.197066, 5.746510, 6.147288, 6.3217…</code></pre>
+<pre class="r"><code># Let us compare GDP components for these 3 countries
+country_list &lt;- c(&quot;United States&quot;,&quot;India&quot;, &quot;Germany&quot;)</code></pre>
+<p>First, can you produce this plot?</p>
+<p><img src="../../images/gdp1.png" width="100%" /><img src="/blogs/GDP_files/figure-html/gdp1-2.png" width="100%" /></p>
+<p>Secondly, recall that GDP is the sum of Household Expenditure (Consumption <em>C</em>), Gross Capital Formation (business investment <em>I</em>), Government Expenditure (G) and Net Exports (exports - imports). Even though there is an indicator <code>Gross Domestic Product (GDP)</code> in your dataframe, I would like you to calculate it given its components discussed above.</p>
+<blockquote>
+<p>What is the % difference between what you calculated as GDP and the GDP figure included in the dataframe?</p>
+</blockquote>
+<pre><code>## [1] 0.008665614</code></pre>
+<p><img src="/blogs/GDP_files/figure-html/gdp2-1.png" width="100%" /></p>
