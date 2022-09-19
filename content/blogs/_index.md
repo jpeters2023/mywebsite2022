@@ -6,4 +6,4 @@ slug: blogs
 title: Jean-Francois Peters 
 ---
 
-Scroll down to see what I'm all about
+Scroll down to see my projects

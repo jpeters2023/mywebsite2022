@@ -3,14 +3,14 @@ categories:
 - ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
 - ""
 date: "2022-09-14"
-description: A graph depicting the best and worst countries regarding renewable energy production # the title that will show up once someone gets to this page
+description: Brexit voting analysis  # the title that will show up once someone gets to this page
 draft: false
-image: energy.png #save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+image: brexit.jpg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
 keywords: ""
 slug: brexit # slug is the shorthand URL address... no spaces plz
-title: "Share of renewable energy production: tops and flops"
+title: Brexit voting analysis 
 ---
-
 
 ```{r load-libraries,include=FALSE, cache = FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
@@ -30,103 +30,69 @@ library(countrycode)
 
 
 
-The National Bureau of Economic Research (NBER) has a a very interesting
-dataset on the adoption of about 200 technologies in more than 150
-countries since 1800. This is the[Cross-country Historical Adoption of
-Technology (CHAT) dataset](https://www.nber.org/research/data/cross-country-historical-adoption-technology).
+# Challenge 1: Brexit plot
 
-The following is a description of the variables
-
-| **variable** | **class** | **description**                |
-|--------------|-----------|--------------------------------|
-| variable     | character | Variable name                  |
-| label        | character | Label for variable             |
-| iso3c        | character | Country code                   |
-| year         | double    | Year                           |
-| group        | character | Group (consumption/production) |
-| category     | character | Category                       |
-| value        | double    | Value (related to label)       |
-
-```{r,load_technology_data}
-
-technology <- readr::read_csv(here::here('data/technology.csv'))
-
-#get all technologies
-labels <- technology %>% 
-  distinct(variable, label)
-
-# Get country names using 'countrycode' package
-technology <- technology %>% 
-  filter(iso3c != "XCD") %>% 
-  mutate(iso3c = recode(iso3c, "ROM" = "ROU"),
-         country = countrycode(iso3c, origin = "iso3c", destination = "country.name"),
-         country = case_when(
-           iso3c == "ANT" ~ "Netherlands Antilles",
-           iso3c == "CSK" ~ "Czechoslovakia",
-           iso3c == "XKX" ~ "Kosovo",
-           TRUE           ~ country))
-
-#make smaller dataframe on energy
-energy <- technology %>% 
-  filter(category == "Energy")
-
-# download CO2 per capita from World Bank using {wbstats} package
-# https://data.worldbank.org/indicator/EN.ATM.CO2E.PC
-# co2_percap <- wb_data(country = "countries_only", 
-#                       indicator = "EN.ATM.CO2E.PC", 
-#                       start_date = 1970, 
-#                       end_date = 2022,
-#                       return_wide=FALSE) %>% 
-#   filter(!is.na(value)) %>% 
-#   #drop unwanted variables
-#   select(-c(unit, obs_status, footnote, last_updated))
-
-co2_percap <- read_csv(here::here("data/co2percap.csv"),skip = 4) %>% 
-  janitor::clean_names()
+Using your data manipulation and visualisation skills, please use the Brexit results dataframe (the same dataset you used in the pre-programme assignement) and produce the following plot. Use the correct colour for each party; google "UK Political Party Web Colours" and find the appropriate hex code for colours, not the default colours that R gives you.
 
 
-```
+```{r brexit_challenge, echo=FALSE, out.width="100%"}
 
-This is a very rich data set, not just for energy and CO2 data, but for many other technologies. In our case, we just need to produce a couple of graphs-- at this stage, the emphasis is on data manipulation, rather than making the graphs gorgeous.
+brexit <- read_csv(here::here("data/brexit_results.csv"))
 
-First, produce a graph with the countries with the highest and lowest % contribution of renewables in energy production. This is made up of `elec_hydro`, `elec_solar`, `elec_wind`, and `elec_renew_other`. You may want to use the *patchwork* package to assemble the two charts next to each other.
- 
-```{r min-max_renewables, echo=FALSE, out.width="100%"}
-library(patchwork)
+# renaming the columns
+brexit <- brexit %>%
+  rename(Conservative = con_2015,
+         Labour = lab_2015,
+         LibDems = ld_2015,
+         UKIP = ukip_2015)
 
-x <-  energy %>%
-  pivot_wider(names_from=variable, values_from=value) %>%
-  filter(year==2019) %>% 
-  group_by(country) %>%
-  summarise(elec_hydro=sum(elec_hydro, na.rm=TRUE),
-           elec_solar=sum(elec_solar, na.rm=TRUE),
-           elec_wind= sum(elec_wind, na.rm=TRUE),
-           elec_renew=sum(elec_renew_other, na.rm=TRUE),
-           elecprod = elecprod)%>%
-  ungroup() %>% 
-  mutate(percentage = (elec_hydro + elec_solar + elec_wind + elec_renew) / elecprod, 
-         percentage = if_else(is.na(percentage),0,percentage), 
-         percentage = if_else(is.infinite(percentage),0,percentage)) %>% 
-  filter(elecprod > 0)
+# pivoting the table longer
+brexit_longer <- brexit %>%
+  pivot_longer(
+    cols = Conservative:UKIP,
+    names_to = "party",
+    values_to = "count"
+  )
+
+color_party = c("#0087DC", "#E32636", "#FAA61A", "#6D3177") #assigning party colors to a vector
+
+ggplot(brexit_longer,
+  aes(
+    x = count,
+    y = leave_share
+  )) +
+  geom_point(aes(color = party), alpha = 0.4)  +  
+  scale_color_manual(values = color_party) +
+  #adding trend lines
+  geom_smooth(data = brexit,
+      aes(x = Conservative, y = leave_share), 
+      color = color_party[1],
+      method = "lm",
+      se = TRUE) +
+  geom_smooth(data = brexit,
+      aes(x = Labour, y = leave_share),
+      color = color_party[2],
+      method = "lm",
+      se = TRUE) +
+  geom_smooth(data = brexit,
+      aes(x = LibDems, y = leave_share),
+      color = color_party[3],
+      method = "lm",
+      se = TRUE) +
+  geom_smooth(data = brexit,
+      aes(x = UKIP, y = leave_share),
+      color = color_party[4],
+      method = "lm",
+      se = TRUE) +
   
-top_20 <- x%>%  
-  mutate(country = fct_reorder(country,percentage)) %>% 
-  slice_max(percentage, n = 20) %>% 
-  ggplot(aes(percentage,country))  + 
-  geom_col()+ 
-  theme_bw()
-
-
-
-bottom_20 <- x%>%  
-  mutate(country = fct_reorder(country,percentage)) %>%
-  slice_min(percentage, n = 20) %>% 
-  ggplot(aes(percentage,country))  + 
-  geom_col()+ 
-  theme_bw()
-
-
-top_20 + bottom_20 
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  theme(legend.title = element_blank()) +
   
-
+  
+  labs(
+    title = "How political affiliation translated to Brexit Voting",
+    x = "Party % in the UK 2015 General Elections",
+    y = "Leave % in 2016 Brexit Referedum"
+  ) 
 ```
